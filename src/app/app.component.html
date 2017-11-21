@@ -1,0 +1,37 @@
+<!-- <div class="basic-grey">
+  <form>
+    <label>
+          <span>ID:</span> 
+          <input type="text" [attr.value]="selectedEmployee.id" readonly>
+      </label>
+
+    <label>
+          <span>Name: </span>
+          <input type="text" name="employeeName"[(ngModel)]="selectedEmployee.name" placeholder="Name" />
+    </label>
+    <input type="button" class="button" (click)="onFormSubmit()" [attr.value]="selectedEmployee.id ? 'UPDATE': 'ADD'" [disabled]="!selectedEmployee.name">
+    <input type="button" class="button" (click)="onEmployeeDelete()" value="DELETE" [disabled]="!selectedEmployee.id">
+    <input type="button" class="button" (click)="resetForm()" value="RESET" [disabled]="!selectedEmployee.name">
+    <input type="button" class="button" (click)="getEmployeesFromDb()" value="FETCH">
+  </form>
+
+
+<ul *ngIf="allEmployees.length != 0" class="employeeList">
+  <li class="first">
+    <p>ID</p>
+    <p>Name</p>
+  </li>
+  <li [class.active]="employee.id == selectedEmployee.id" *ngFor="let employee of allEmployees" (click)="onEmployeeRowClick(employee)">
+    <p> {{employee.id}}</p>
+    <p> {{employee.name}}</p>
+  </li>
+</ul>
+</div> -->
+<h1>{{title}}</h1>
+<nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/ag-grid">AG-Grid</a>
+  <a routerLink="/week-carousel">Week-Calendar</a>
+</nav>
+<router-outlet></router-outlet>
+<!-- <ka-week-calendar></ka-week-calendar> -->

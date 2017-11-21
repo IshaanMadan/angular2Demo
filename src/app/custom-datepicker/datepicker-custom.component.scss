@@ -1,0 +1,621 @@
+
+
+/deep/ {
+    .weekCalendarPopover {
+        .popover {
+            width: 375px;
+            max-width: inherit;
+            height: 325px;
+            border: 0px;
+            border-radius: 0px;
+            box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.31);
+            ul {
+                width: 100%;
+                float: left;
+                li {
+                    width: 14.28%;
+                    margin-bottom: 15px;
+                    float: left;
+                    position: relative;
+                    z-index: 0;
+                }
+                &.weekNameList {
+                    li {
+                        font-size: 14px;
+                        font-family: 'open-bold';
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+        ng-select {
+            div {
+                border: 0px;
+                font-family: 'open';
+                &.placeholder,
+                .single,
+                .value {
+                    color: #314d85 !important;
+                    padding: 0 !important;
+                }
+            }
+            select-dropdown {
+                .options {
+                    margin-top: 10px;
+                    box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.31);
+                    border-radius: 2px;
+                    padding: 5px 0;
+                    ul {
+                        li {
+                            width: 100%;
+                            margin: 0;
+                            font-family: 'open';
+                            color: #9faed3;
+                            padding: 5px 10px;
+                            font-size: 15px;
+                            background-color: #fff;
+                            &.highlighted,
+                            .selected {
+                                background-color: #fff;
+                                color: #4267b2;
+                            }
+                        }
+                    }
+                }
+            }
+            .toggle {
+                width: 10px !important;
+                background-image: none !important;
+                &:hover {
+                    background-color: transparent !important;
+                }
+                &:after {
+                    width: 10px;
+                    height: 10px;
+                    content: '';
+                    position: absolute;
+                    border-top: 6px solid #314d85;
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    top: 50%;
+                    right: 0;
+                    margin-top: -4px;
+                }
+            }
+            &.month-option {
+                width: 150px;
+                margin: -10px auto 15px auto;
+                display: table;
+                float: none;
+                .placeholder,
+                .single,
+                .value {
+                    font-size: 25px;
+                }
+            }
+            &.year-option {
+                width: 60px;
+                font-family: 'open-semi-bold';
+                .placeholder,
+                .single,
+                .value {
+                    font-size: 16px;
+                }
+            }
+        }
+        &.singleWeek {
+            ul {
+                width: 100%;
+                float: left;
+                li {
+                    width: 14.28%;
+                    margin-bottom: 15px;
+                }
+                &.weekNameList{
+                    li{
+                        margin-bottom: 5px;
+                        font-family: 'open-bold';
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+    .week-dates-container {
+        list-style: none;
+        height: 91px;
+        margin: 0;
+        box-shadow: 0px 0px 14px 0.2px rgba(0, 0, 0, 0.1);
+        margin-top: 9px;
+        position: relative;
+        .ui-inputtext {
+            display: none;
+        }
+        li {
+            float: left;
+            margin: 0;
+            text-align: center;
+            position: relative;
+            .week-left {
+                width: 30px;
+                float: left;
+                height: 100%;
+                position: relative;
+                .week-number {
+                    transform: rotate(-90deg);
+                    white-space: nowrap;
+                    position: absolute;
+                    left: -17px;
+                    top: 35px;
+                    font-size: 15px;
+                    font-family: 'open-semi-bold';
+                    text-transform: uppercase;
+                    color: #f46581;
+                    letter-spacing: 0.4px;
+                }
+            }
+            .week-right {
+                width: calc(100% - 30px);
+                float: left;
+                height: 100%;
+                .week-name {
+                    width: 98%;
+                    height: 30px;
+                    border-bottom: 1px solid #fedfee;
+                    font-size: 15px;
+                    color: #212121;
+                    font-family: 'open-semi-bold';
+                    text-align: left;
+                    padding: 1px 5px;
+                    text-transform: uppercase;
+                    p {
+                        float: left;
+                        font-size: 14px;
+                        &.current-date {
+                            font-size: 12px;
+                            float: right;
+                            padding-right: 30px;
+                            padding-top: 1px;
+                        }
+                    }
+                }
+            }
+            // .week-dates {
+            //     float: left;
+            //     width: 14.28%;
+            //     height: 70px;
+            //     p {
+            //         padding: 2px;
+            //         font-size: 13px;
+            //         width: 100%;
+            //         float: left;
+            //         &.name {
+            //             height: 24px;
+            //             padding-top: 0;
+            //             color: #212121;
+            //             font-family: 'open-semi-bold';
+            //             padding-bottom: 2px;
+            //         }
+            //         .weekend {
+            //             color: #b8b8b8;
+            //         }
+            //         span {
+            //             float: left;
+            //             width: 100%;
+            //             position: relative;
+            //             top: 50%;
+            //             transform: translateY(-50%);
+            //         }
+            //     }
+            // }
+        }
+        .filter-week {
+            position: absolute;
+            width: 34px;
+            top: 4px;
+            right: 0;
+            z-index: 99999;
+            background: #fff;
+            height: 20px;
+        }
+    }
+}
+
+.carousel-button {
+    position: absolute;
+    width: calc(100% + 84px);
+    top: 50%;
+    margin-left: -42px;
+    button {
+        background: transparent;
+        border: 0px;
+        position: absolute;
+        &.prev {
+            left: 0;
+        }
+        &.next {
+            right: 0;
+        }
+    }
+}
+
+
+.custom-calendar {
+    .progress-circle {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        background: none;
+        margin: 0 auto;
+        box-shadow: 0px 1px 8px 0.24px rgba(0, 0, 0, 0.22);
+        position: relative;
+        border-radius: 100%;
+        &:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        span {
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 100%;
+            background: none;
+            border-width: 2px;
+            border-style: solid;
+            position: absolute;
+            top: 0;
+        }
+        .progress-left {
+            left: 0;
+            .progress-bar {
+                left: 100%;
+                border-top-right-radius: 80px;
+                border-bottom-right-radius: 80px;
+                border-left: 0;
+                -webkit-transform-origin: center left;
+                transform-origin: center left;
+            }
+        }
+        .progress-right {
+            right: 0;
+            .progress-bar {
+                left: -100%;
+                border-top-left-radius: 80px;
+                border-bottom-left-radius: 80px;
+                border-right: 0;
+                -webkit-transform-origin: center right;
+                transform-origin: center right;
+                animation: loading-2 1.8s linear forwards;
+            }
+        }
+        .progress-value {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            font-size: 14px;
+            font-family: 'open-semi-bold';
+            text-align: center;
+            position: absolute;
+            line-height: 30px;
+            z-index: 9;
+        }
+        .progress-bar {
+            border-color: #f14c4c;
+        }
+        .progress-value {
+            color: #314d85;
+        }
+        &.progress-text {
+            .progress-bar {
+                border-color: #7cc576;
+            }
+        }
+        &.current-date {
+            .progress-bar {
+                border-color: #f14c4c !important;
+            }
+            .progress-value {
+                color: #f14c4c !important;
+            }
+        }
+        &.active {
+            .progress-value {
+                width: 24px;
+                height: 24px;
+                font-size: 13px;
+                line-height: 24px;
+                top: 3.5px;
+                left: 3px;
+                background: #314d85;
+                color: #fff;
+            }
+        }
+        &.default {
+            .progress-left {
+                .progress-bar {
+                    animation: none;
+                }
+            }
+            .progress-right {
+                .progress-bar {
+                    animation: ten 1s linear forwards 1s;
+                }
+            }
+        }
+        &.twenty,
+        &.thirty,
+        &.forty,
+        &.fifty {
+            .progress-left {
+                .progress-bar {
+                    animation: none;
+                }
+            }
+        }
+        &.twenty {
+            .progress-right {
+                .progress-bar {
+                    animation: twenty 1s linear forwards 1s;
+                }
+            }
+        }
+        &.thirty {
+            .progress-right {
+                .progress-bar {
+                    animation: thirty 1s linear forwards 1s;
+                }
+            }
+        }
+        &.forty {
+            .progress-right {
+                .progress-bar {
+                    animation: forty 1s linear forwards 1s;
+                }
+            }
+        }
+        &.fifty {
+            .progress-right {
+                .progress-bar {
+                    animation: fifty 1s linear forwards 1s;
+                }
+            }
+        }
+        &.sixty {
+            .progress-left {
+                .progress-bar {
+                    animation: sixty-left 1s linear forwards 1s;
+                }
+            }
+            .progress-right {
+                .progress-bar {
+                    animation: sixty-right 1s linear forwards;
+                }
+            }
+        }
+        &.seventy {
+            .progress-left {
+                .progress-bar {
+                    animation: seventy-left 1s linear forwards 1s;
+                }
+            }
+            .progress-right {
+                .progress-bar {
+                    animation: seventy-right 1s linear forwards;
+                }
+            }
+        }
+        &.eighty {
+            .progress-left {
+                .progress-bar {
+                    animation: eighty-left 1s linear forwards 1s;
+                }
+            }
+            .progress-right {
+                .progress-bar {
+                    animation: eighty-right 1s linear forwards;
+                }
+            }
+        }
+        &.ninety {
+            .progress-left {
+                .progress-bar {
+                    animation: ninety-left 1s linear forwards 1s;
+                }
+            }
+            .progress-right {
+                .progress-bar {
+                    animation: ninety-right 1s linear forwards;
+                }
+            }
+        }
+        &.hundred {
+            .progress-left {
+                .progress-bar {
+                    animation: hundred-left 1s linear forwards 1s;
+                }
+            }
+            .progress-right {
+                .progress-bar {
+                    animation: hundred-right 1s linear forwards;
+                }
+            }
+        }
+    }
+}
+
+@keyframes ten {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+
+@keyframes twenty {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
+    }
+}
+
+@keyframes thirty {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(108deg);
+        transform: rotate(108deg);
+    }
+}
+
+@keyframes forty {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+
+@keyframes fifty {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes sixty-right {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes sixty-left {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+
+@keyframes seventy-right {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes seventy-left {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(72deg);
+        transform: rotate(72deg);
+    }
+}
+
+@keyframes eighty-right {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes eighty-left {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(108deg);
+        transform: rotate(108deg);
+    }
+}
+
+@keyframes ninety-right {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes ninety-left {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg);
+    }
+}
+
+@keyframes hundred-right {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes hundred-left {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}

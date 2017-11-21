@@ -1,0 +1,146 @@
+<div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-shadow ng-trigger ng-trigger-overlayState"
+  ng-reflect-klass="ui-datepicker ui-widget ui-wid" ng-reflect-ng-class="[object Object]" ng-reflect-ng-style="[object Object]"
+  style="display: block; z-index: 1001; top: 0px; left: 0px; opacity: 1;">
+
+  <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all ng-tns-c3-0">
+
+    <a class="ui-datepicker-prev ui-corner-all" (click)="onNextPrevClick(activeMonth, activeYear, 'prev')" href="#">
+                        <span class="fa fa-angle-left">Prev</span>
+                    </a>
+    <a class="ui-datepicker-next ui-corner-all" (click)="onNextPrevClick(activeMonth, activeYear, 'next')" href="#">
+                        <span class="fa fa-angle-right">Next</span>
+                    </a>
+    <div class="ui-datepicker-title">
+
+      <span class="ui-datepicker-month ng-tns-c3-0">{{activeMonth}}</span>
+      <span class="ui-datepicker-year ng-tns-c3-0">{{activeYear}}</span>
+    </div>
+  </div>
+  <table class="ui-datepicker-calendar ng-tns-c3-0">
+    <thead class="ng-tns-c3-0">
+      <tr class="ng-tns-c3-0">
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">Mo</span>
+        </th>
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">Tu</span>
+        </th>
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">We</span>
+        </th>
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">Th</span>
+        </th>
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">Fr</span>
+        </th>
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">Sa</span>
+        </th>
+        <th scope="col" class="ng-tns-c3-0">
+          <span class="ng-tns-c3-0">Su</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody class="ng-tns-c3-0">
+      <!--<tr class="ng-tns-c3-0">
+        <td *ngFor="let dateObj of monthData; let i = index" class="ng-tns-c3-0 ui-datepicker-other-month ui-state-disabled" ng-reflect-ng-class="[object Object]">
+          <a class="ui-state-default ng-tns-c3-0" href="#" ng-reflect-klass="ui-state-default" ng-reflect-ng-class="[object Object]">
+            {{dateObj.date | date : "d"}}
+          </a>
+        </td>     
+      </tr>-->
+<ng-template ngFor let-i="index" let-c="count" let-dateObj [ngForOf]="monthData">
+    <tr *ngIf="(((i+1) % 7) == 0) || i == 0">
+    </tr>
+        <td [class.ui-state-disabled]="!dateObj.inMonth">
+          <a (click)="onDateClick(dateObj.date)" [class.ui-state-highlight]="currentDate && dateObj.date.getTime()==currentDate.getTime()"  class="ui-state-default ng-tns-c3-0" href="#" ng-reflect-klass="ui-state-default" ng-reflect-ng-class="[object Object]">
+            {{dateObj.date | date : "d"}}
+          </a>
+        </td> 
+</ng-template>
+    </tbody>
+  </table>
+
+</div>
+
+<!--
+                   <ul class="custom-calendar dateNameList">
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">1</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">2</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">3</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">4</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">5</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">6</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="progress-circle fifty">
+                                <span class="progress-left">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <span class="progress-right">
+                                    <span class="progress-bar"></span>
+                                </span>
+                                <div class="progress-value">7</div>
+                            </div>
+                        </li>
+                    </ul>-->

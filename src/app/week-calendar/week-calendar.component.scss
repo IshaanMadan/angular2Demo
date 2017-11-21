@@ -1,0 +1,391 @@
+/deep/ {
+  .slick-carousel-section {
+    width: 560px;
+    margin-left: 30%;
+    position: relative;
+  }
+  .week-dates-container {
+    list-style: none;
+    margin: 0;
+    box-shadow: 0px 0px 14px 0.2px rgba(0, 0, 0, 0.1);
+    margin-top: 9px;
+    position: relative;
+    .ui-inputtext {
+      display: none;
+    }
+    li {
+      float: left;
+      margin: 0;
+      text-align: center;
+      position: relative;
+      .week-left {
+        width: 30px;
+        float: left;
+        height: 100%;
+        position: relative;
+        .week-number {
+          transform: rotate(-90deg);
+          white-space: nowrap;
+          position: absolute;
+          left: -17px;
+          top: 35px;
+          font-size: 15px;
+          font-family: 'open-bold';
+          text-transform: uppercase;
+          color: #dc3929;
+          letter-spacing: 0.2px;
+        }
+      }
+      .week-right {
+          width: calc(100% - 54px);
+          float: right;
+          height: 100%;
+        .top-bar{
+          width: 100%;
+          overflow: hidden;
+          border-bottom: 1px solid #fedfee;
+          font-size: 16px;
+          color: #212121;
+          font-family: 'open-bold';
+          text-align: left;
+          padding: 1px 5px;
+          text-transform: uppercase;
+        }
+        .week-name {
+          width: 50%;
+          height: 30px;
+          float: left;
+
+          p {
+            float: left;
+            margin: 0;
+          }
+        }
+        .current-date{
+           width: 40%;
+           float: left;
+          p {
+            margin: 0;
+          }
+        }
+      }
+      .week-dates {
+        float: left;
+        width: 12.28%;
+        p {
+          padding: 2px;
+          font-size: 13px;
+          width: 100%;
+          float: left;
+          &.name {
+            height: 24px;
+            padding-top: 0;
+            color: #212121;
+            font-family: 'open-semi-bold';
+            padding-bottom: 2px;
+          }
+          .weekend {
+            color: #b8b8b8;
+          }
+          span {
+            float: left;
+            width: 100%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    p-calendar {
+      position: absolute;
+      right: 5px;
+      z-index: 99999;
+      .ui-calendar {
+        button {
+          height: 20px;
+          width: 20px;
+          border-radius: 0;
+          overflow: visible;
+          &:focus {
+            background: none;
+            box-shadow: none;
+          }
+          .fa-calendar {
+            margin-top: -11px;
+            margin-left: -10px;
+            &:before {
+              //@include sprite($ico-calendar-orange);
+            }
+          }
+        }
+        .ui-datepicker {
+          width: 310px;
+          top: 35px !important;
+          left: -22px !important;
+        }
+      }
+    }
+    .filter-week {
+      position: absolute;
+      width: calc(100% - 75px);
+      top: 0;
+      right: 0;
+      z-index: 99999; // background: $app-white;
+      height: 25px;
+    }
+    .week-ng-select {
+      position: absolute;
+      top: 0;
+      right: 40px;
+      z-index: 999999;
+      ng-select {
+        width: 60px;
+        float: left;
+        position: relative;
+        margin: 0 8px;
+        font-family: 'open-semi-bold';
+        &:after {
+          content: '/';
+          position: absolute;
+          right: -16px;
+          top: -1px;
+          color: #afafaf;
+          font-size: 20px;
+          z-index: 99999;
+        }
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+        .single {
+          height: 25px;
+        }
+        div {
+          border: 0px;
+        }
+        .placeholder,
+        .value {
+          font-size: 13px;
+          font-family: 'open-bold';
+          color: #212121;
+          letter-spacing: 0.2px;
+          line-height: 26px;
+        }
+        .toggle {
+          background-image: none;
+          border-top: 7px solid #7f7f7f;
+          border-left: 7px solid transparent;
+          border-right: 7px solid transparent;
+          width: 14px;
+          height: 16px;
+          margin-top: 10px;
+          color: transparent;
+          &:hover {
+            background: transparent;
+          }
+        }
+        select-dropdown {
+          div {
+            // border: 1px solid $app-lighter-grey;
+          }
+          .options {
+            max-height: 100px;
+            ul {
+              li {
+                width: 100%;
+                float: left; //  border-bottom: 1px solid $app-lighter-grey;
+                padding: 2px 5px;
+                font-family: 'open';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.carousel-button {
+  position: absolute;
+  width: calc(100% + 84px);
+  top: 50%;
+  margin-left: -42px;
+  button {
+    background: transparent;
+    border: 0px;
+    position: absolute;
+    &.prev {
+      left: 0;
+    }
+    &.next {
+      right: 0;
+    }
+  }
+}
+
+.fill-property {
+  position: absolute;
+  border: 0.08em solid #dc3929;
+  width: 0.84em;
+  height: 0.84em;
+  clip: rect(0em, 0.5em, 1em, 0em);
+  border-radius: 50%; //@include rotate(180deg);
+}
+
+.date {
+  position: relative;
+  font-size: 30px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin: 0 auto; // background-color: $app-white;
+  display: table;
+  box-shadow: 0px 0px 3.76px 0.24px rgba(0, 0, 0, 0.22);
+  &:after {
+    position: absolute;
+    top: 0.09em;
+    left: 0.1em;
+    display: block;
+    content: " ";
+    border-radius: 50%;
+    background-color: #314d85;
+    width: 0.8em;
+    height: 0.8em;
+  }
+  &.active:after {
+    background-color: red;
+  }
+  span {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    font-size: 13px; //color: $app-white;
+    display: block;
+    line-height: 1;
+    font-family: 'open-bold';
+    padding-top: 8px;
+  }
+  .slice {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    clip: rect(0em, 1em, 1em, 0.5em);
+  }
+  &.p10 {
+    .bar {
+      //@include rotate(36deg);
+    }
+  }
+  &.p20 {
+    .bar {
+      //@include rotate(72deg);            
+    }
+  }
+  &.p30 {
+    .bar {
+      //@include rotate(108deg);     
+    }
+  }
+  &.p40 {
+    .bar {
+      //@include rotate(144deg);            
+    }
+  }
+  &.p50 {
+    .bar {
+      //@include rotate(180deg);           
+    }
+  }
+  &.p60 {
+    .slice {
+      clip: rect(auto, auto, auto, auto);
+    }
+    .fill {
+      @extend .fill-property;
+    }
+    .bar {
+      //@include rotate(216deg);           
+      &:after {
+        //@include rotate(180deg); 
+      }
+    }
+  }
+  &.p70 {
+    .slice {
+      clip: rect(auto, auto, auto, auto);
+    }
+    .fill {
+      @extend .fill-property;
+    }
+    .bar {
+      //@include rotate(252deg);
+      &:after {
+        //@include rotate(180deg); 
+      }
+    }
+  }
+  &.p80 {
+    .slice {
+      clip: rect(auto, auto, auto, auto);
+    }
+    .fill {
+      @extend .fill-property;
+    }
+    .bar {
+      //@include rotate(288deg);           
+      &:after {
+        //@include rotate(180deg); 
+      }
+    }
+  }
+  &.p90 {
+    .slice {
+      clip: rect(auto, auto, auto, auto);
+    }
+    .fill {
+      @extend .fill-property;
+    }
+    .bar {
+      //@include rotate(324deg);
+      &:after {
+        //@include rotate(180deg); 
+      }
+    }
+  }
+  &.p100 {
+    .slice {
+      clip: rect(auto, auto, auto, auto);
+    }
+    .fill {
+      @extend .fill-property;
+    }
+    .bar {
+      //@include rotate(360deg);
+      &:after {
+        //@include rotate(180deg); 
+      }
+    }
+  }
+  .bar {
+    @extend .fill-property; //@include rotate(0deg);
+  }
+  * {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    &:before {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+    &:after {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+    }
+  }
+}

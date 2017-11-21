@@ -1,0 +1,56 @@
+<div class="top-bar-button pull-left slick-carousel-section">
+<ka-datepicker-custom [currentDateInput]="currentSelectedDate" (dateChanged)="onDateSelectFromDatePicker($event)"></ka-datepicker-custom>
+  <ul class="week-dates-container">
+    <div class="app-spinner" *ngIf="spinnerShow">
+      <span class="icon"></span>
+    </div>
+    <div class="filter-week">
+      <p-calendar [hidden]="carouselSliding" class="calendar-with-text" name="weekCalendarDatePicker" [(ngModel)]="currentSelectedDate"
+        id="weekCalendarDatePicker" [minDate]="minDatePickerDate" [maxDate]="maxDatePickerDate" readonlyInput="readonlyInput"
+        [showIcon]="true" (onSelect)="onDateSelectFromDatePicker($event)"></p-calendar>
+    </div>
+    <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (beforeChange)="beforeSlideChange($event)" (afterChange)="afterSlideChange($event)">
+      <li ngxSlickItem class="slide" *ngFor="let week of weeksDataObj;  let weekIndex=index">
+        <p-calendar class="calendar-with-text" name="weekCalendarDatePicker" [(ngModel)]="currentSelectedDate" id="weekCalendarDatePicker"
+          [minDate]="minDatePickerDate" [maxDate]="maxDatePickerDate" readonlyInput="readonlyInput" [showIcon]="true" (onSelect)="onDateSelectFromDatePicker($event)"></p-calendar>
+        <div class="week-left">
+          <div class="week-number">
+            <p>Week {{week.weekNo}}</p>
+          </div>
+        </div>
+        <div class="week-right">
+          <div class="top-bar">
+            <div class="week-name">
+              <p>{{ week.weekDays.mon | date : "d/MMM/y"}} - {{ week.weekDays.sun | date : "d/MMM/y"}}</p>
+            </div>
+            <div class="current-date">
+              <p *ngIf="currentSelectedDate">{{ currentSelectedDate | date : "d/MMM/y" }}</p>
+            </div>
+          </div>
+          <div class="week-dates" *ngFor="let day of week.weekDays | keys">
+            <p [ngSwitch]="day.key" class="name">
+              <span *ngSwitchCase="'mon'">Mon</span>
+              <span *ngSwitchCase="'tue'">Tue</span>
+              <span *ngSwitchCase="'wed'">Wed</span>
+              <span *ngSwitchCase="'thu'">Thu</span>
+              <span *ngSwitchCase="'fri'">Fri</span>
+              <span *ngSwitchCase="'sat'" class="weekend">Sat</span>
+              <span *ngSwitchCase="'sun'" class="weekend">Sun</span>
+            </p>
+            <div class="date p40" [class.active]="currentSelectedDate && day.value.getTime() == currentSelectedDate.getTime()" (click)="getWeekDate(day.value)">
+              <span [class.active]="currentSelectedDate && day.value.getTime() == currentSelectedDate.getTime()" [class.weekend]="day.key == 'sat' || day.key == 'sun'">{{day.value | date : "d"}}</span>
+              <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ngx-slick>
+  </ul>
+  <div class="carousel-button">
+    <button class="prev" (click)="slickModal.slickPrev()"><i class="icon ka-sprite-ico-calendar-prev inline-block-middle">prev</i></button>
+    <button class="next" (click)="slickModal.slickNext()"><i class="icon ka-sprite-ico-calendar-next inline-block-middle">next</i></button>
+  </div>
+</div>
